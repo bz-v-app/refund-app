@@ -1,11 +1,16 @@
 @import "./common.scss";
+@import "./dropload.scss";
 .refund-list-warp{
-  width:100%;
-  box-sizing: border-box;
-  padding:0 30px 0 30px;
-  .refund-list{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    padding:0 30px 0 30px;
+    margin-bottom:160px;
+    overflow-y:scroll;
+    .refund-list{
       width:100%;
       .refund-one{
+          position: relative;
             width:100%;
             background:rgba(255,255,255,1);
             box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
@@ -13,7 +18,7 @@
             margin-top:20px;
             height:200px;
             box-sizing: border-box;
-            padding:29px 31px 0 30px;
+            padding:29px 31px 28px 30px;
             .refund-nav{
                 display: flex;
                 flex-flow: row nowrap;
@@ -43,7 +48,6 @@
                             flex-flow: row nowrap;
                             justify-content: space-between;
                             align-items: center;
-                            margin-bottom:28px;
                             .title{
                                 line-height:23px;
                                 font-size:24px;
@@ -57,15 +61,86 @@
                                 color:rgba(102,102,102,1);
                             }
                         }
-                        .refund-msg-details:nth-child(1) .title{
-                            margin-right:51px;
+                        .refund-msg-details:nth-child(1){ 
+                            margin-bottom:28px;
+                            .title{
+                                margin-right:51px;
+                            }
                         }
                         .refund-msg-details:nth-child(2) .title{
                             margin-right:28px;
                         }
                     }
                 }
+                .refund-one-result{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    flex-basis: 40%;
+                    height:100%;
+                }
+                .passed::after{
+                    content:"";
+                    display: block;
+                    width:120px;
+                    height:58px;
+                    background-image: url("../images/refund-collect-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: 404px 144px;
+                    background-position: -140px 0px;
+                }
+                .returned::after{
+                    content:"";
+                    display: block;
+                    width:120px;
+                    height:58px;
+                    background-image: url("../images/refund-collect-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: 404px 144px;
+                    background-position: -140px -60px;
+                }
+                .dealing::after{
+                    content:"审批中";
+                    display: block;
+                    line-height:25px;
+                    font-size:26px;
+                    font-weight:500;
+                    color:rgba(0,136,255,1);
+                }
+                .arrow-right{
+                    position: absolute;
+                    top:34px;
+                    right:30px;
+                    width:12px;
+                    height:21px;
+                    background-image: url("../images/refund-collect-icon.png");
+                    background-repeat: no-repeat;
+                    background-size: 404px 144px;
+                    background-position: 0 0;
+                }
             }
         }
+    }
+}
+
+.refund-foot-box{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:140px;
+    box-sizing: border-box;
+    padding:30px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 4px 20px 0px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    .refund-foot-btn{
+        width:100%;
+        line-height:80px;
+        font-size:34px;
+        font-weight:500;
+        color:rgba(255,255,255,1);
+        background:rgba(0,140,230,1);
+        border-radius:8px;
     }
 }
