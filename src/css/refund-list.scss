@@ -1,5 +1,71 @@
 @import "./common.scss";
-
 .refund-list-warp{
-  
+  width:100%;
+  box-sizing: border-box;
+  padding:0 30px 0 30px;
+  .refund-list{
+      width:100%;
+      .refund-one{
+            width:100%;
+            background:rgba(255,255,255,1);
+            box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border-radius:16px;
+            margin-top:20px;
+            height:200px;
+            box-sizing: border-box;
+            padding:29px 31px 0 30px;
+            .refund-nav{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                width:100%;
+                height:100%;
+                .refund-one-msg{
+                    display: flex;
+                    flex-flow:column nowrap;
+                    justify-content: space-between;
+                    height:100%;
+                    flex-basis: 60%;
+                    .title{
+                        line-height:28px;
+                        font-size:30px;
+                        font-weight:500;
+                        color:rgba(0,0,0,1);
+                    }
+                    .refund-user-msg{
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        .refund-msg-details{
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom:28px;
+                            .title{
+                                line-height:23px;
+                                font-size:24px;
+                                font-weight:500;
+                                color:rgba(153,153,153,1);
+                            }
+                            .refund-details{
+                                line-height:23px;
+                                font-size:24px;
+                                font-weight:500;
+                                color:rgba(102,102,102,1);
+                            }
+                        }
+                        .refund-msg-details:nth-child(1) .title{
+                            margin-right:51px;
+                        }
+                        .refund-msg-details:nth-child(2) .title{
+                            margin-right:28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
