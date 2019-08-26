@@ -95,7 +95,7 @@ body{
                 border-radius:8px;
                 margin-bottom:20px;
                 .title{
-                    flex-basis: 24%;
+                    flex-basis: 22%;
                     height:100%;
                     line-height: 1;
                     font-size:26px;
@@ -103,11 +103,10 @@ body{
                     color:rgba(102,102,102,1);
                 }
                 .refund-reson-inp{
-                    flex-basis: 76%;
+                    flex-basis: 78%;
                     height:100%;
                     line-height: 1;
-                    font-size:26px;
-                    font-weight:500;
+                    font:500 30px "";
                     color:rgba(0,0,0,1);
                 }
                 .refund-reson-inp::-webkit-input-placeholder {
