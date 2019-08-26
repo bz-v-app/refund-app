@@ -6,7 +6,7 @@
     <meta name="full-screen" content="yes">
     <meta name="x5-fullscreen" content="true">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-    <title>报事报修</title>
+    <title>退费申请</title>
     <link rel="stylesheet" href="../css/refund-checkBox.css">
     <script>
         !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
@@ -122,6 +122,102 @@
 
                             </label>
                         </li>
+                        <li>
+                            <input type="checkbox" class="magic-checkbox" id="ch4">
+                            <label for="ch4" class="label-flex-warp">
+                                <div class="label-flex-item">
+                                    <div class="item-main">
+                                        <h3 class="title">保证金名称</h3>
+                                        <p class="date">(2019-05-01至2019-06.30)</p>
+                                        <div class="amount">
+                                            <input type="hidden" name="amount" class="amount-ipt" value="21356.00">
+                                            <div class="amount-text">
+                                                <div class="fake-input">21356.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right-handle">
+                                        <div class="inner-text">
+                                            <i class="edit-icon"></i>
+                                            <p class="tips-text">修改金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="magic-checkbox" id="ch4">
+                            <label for="ch4" class="label-flex-warp">
+                                <div class="label-flex-item">
+                                    <div class="item-main">
+                                        <h3 class="title">保证金名称</h3>
+                                        <p class="date">(2019-05-01至2019-06.30)</p>
+                                        <div class="amount">
+                                            <input type="hidden" name="amount" class="amount-ipt" value="21356.00">
+                                            <div class="amount-text">
+                                                <div class="fake-input">21356.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right-handle">
+                                        <div class="inner-text">
+                                            <i class="edit-icon"></i>
+                                            <p class="tips-text">修改金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="magic-checkbox" id="ch4">
+                            <label for="ch4" class="label-flex-warp">
+                                <div class="label-flex-item">
+                                    <div class="item-main">
+                                        <h3 class="title">保证金名称</h3>
+                                        <p class="date">(2019-05-01至2019-06.30)</p>
+                                        <div class="amount">
+                                            <input type="hidden" name="amount" class="amount-ipt" value="21356.00">
+                                            <div class="amount-text">
+                                                <div class="fake-input">21356.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right-handle">
+                                        <div class="inner-text">
+                                            <i class="edit-icon"></i>
+                                            <p class="tips-text">修改金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="magic-checkbox" id="ch4">
+                            <label for="ch4" class="label-flex-warp">
+                                <div class="label-flex-item">
+                                    <div class="item-main">
+                                        <h3 class="title">保证金名称</h3>
+                                        <p class="date">(2019-05-01至2019-06.30)</p>
+                                        <div class="amount">
+                                            <input type="hidden" name="amount" class="amount-ipt" value="213516.00">
+                                            <div class="amount-text">
+                                                <div class="fake-input">213516.00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right-handle">
+                                        <div class="inner-text">
+                                            <i class="edit-icon"></i>
+                                            <p class="tips-text">修改金额</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </label>
+                        </li>
                     </ul>
                 </form>
             </div>
@@ -130,10 +226,12 @@
             <button class="sure" id="submit">确定</button>
         </div>
     </div>
-    <div id="am-number-keyboard-container">
-        <div class="am-number-keyboard-wrapper am-number-keyboard-wrapper-hide">
-            <table>
-                <tbody>
+    <div id="am-number-keyboard-container" class="am-number-keyboard-container">
+        <div class="am-number-keyboard-inner">
+            <div class="am-keyboard-mask"></div>
+            <div class="am-number-keyboard-wrapper am-number-keyboard-wrapper-hide">
+                <table>
+                    <tbody>
                     <tr>
                         <td class="am-number-keyboard-item">1</td>
                         <td class="am-number-keyboard-item">2</td>
@@ -149,16 +247,18 @@
                         <td class="am-number-keyboard-item">7</td>
                         <td class="am-number-keyboard-item">8</td>
                         <td class="am-number-keyboard-item">9</td>
-                        <td class="am-number-keyboard-item keyboard-confirm am-number-keyboard-item-disabled" rowspan="2">确定</td>
+                        <td class="am-number-keyboard-item keyboard-confirm" rowspan="2">确定</td>
                     </tr>
                     <tr>
                         <td class="am-number-keyboard-item keyboard-dot">.</td>
                         <td class="am-number-keyboard-item">0</td>
                         <td class="am-number-keyboard-item keyboard-hide" aria-label="收起键盘"></td>
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     </div>
 </div>
 
@@ -179,9 +279,7 @@
 
         $(".main-li-warp").on("click", "li", function (e) {
             e.stopPropagation();
-            console.log($(e.target).hasClass("right-handle"));
             if(!$(e.target).hasClass("right-handle")){
-                console.log(1)
                 hideKeyboardHandle()
                 clearAllClass()
             }
@@ -190,13 +288,17 @@
         $(".main-li-warp").on("click", ".right-handle", function (e) {
             e.preventDefault();
             if($(this).siblings().hasClass("active")){
-                $(this).siblings().removeClass("active")
-                $(this).siblings().find(".fake-input").removeClass('focus')
+                $(this).siblings().removeClass("active");
+                $(this).siblings().find(".fake-input").removeClass('focus');
                 hideKeyboardHandle()
             }else {
+                var offsetTop = $(this).siblings().addClass("active").parents('li').offset().top;
+                $('.main-li-warp').animate({paddingBottom: '100%'}, 200);
+                $('.refund-checkBox-main').animate({scrollTop: offsetTop}, 200);
+
                 $(this).siblings().addClass("active").parents('li').siblings().find('.item-main').removeClass("active");
                 $(this).siblings().find(".fake-input").addClass("focus").parents('li').siblings().find('.fake-input').removeClass("focus");
-                console.warn( $(this).siblings().find(".amount-ipt").val())
+                console.warn( $(this).siblings().find(".amount-ipt").val());
                 initKeyboardNum = $(this).siblings().find(".amount-ipt").val();
                 openKeyboardHandle();
                 if(initKeyboardNum.includes(".")){
@@ -215,14 +317,18 @@
 
         //关闭键盘
         var hideKeyboardHandle = function () {
+            $("#am-number-keyboard-container").hide();
+            $('.main-li-warp').animate({paddingBottom: 0}, 200);
+            $('.refund-checkBox-main').animate({scrollTop: 0}, 200);
             var targetEle = $("#am-number-keyboard-container .am-number-keyboard-wrapper");
+            discoverIsMoney()
             if(!targetEle.hasClass('am-number-keyboard-wrapper-hide')){
-                // return
                 targetEle.addClass('am-number-keyboard-wrapper-hide')
             }
         }
         //打开键盘
         var openKeyboardHandle = function () {
+            $("#am-number-keyboard-container").show();
             var targetEle = $("#am-number-keyboard-container .am-number-keyboard-wrapper");
             if(targetEle.hasClass('am-number-keyboard-wrapper-hide')){
                 targetEle.removeClass('am-number-keyboard-wrapper-hide')
@@ -241,33 +347,69 @@
             })
         }
 
+        var autoAdd = function (num) {
+            var isDot = num.includes(".")
+            if(isDot){
+                var newNum = num.split('.');
+                if(newNum[1] && newNum[1].length === 2){
+                    return num
+                }else if(newNum[1] && newNum[1].length === 1){
+                    return num + '0'
+                }else {
+                    return num + '00'
+                }
+            }else {
+                return num + '.00'
+            }
+        }
+
+        var discoverIsMoney = function () {
+            $(".main-li-warp li").each(function (i, ele) {
+
+                $(ele).find('.fake-input').text(function () {
+                    return autoAdd($(this).text())
+                });
+                $(ele).find('.amount-ipt').val(function () {
+                    return autoAdd($(this).val())
+                });
+            })
+        }
 
 
         //键盘操作
         $("#am-number-keyboard-container").on("click", ".am-number-keyboard-item", function () {
 
             if($(this).hasClass('keyboard-confirm')){
+                if($(this).hasClass('am-number-keyboard-item-disabled')){
+                    return
+                }
                 clearAllClass();
                 hideKeyboardHandle();
             }
             else if($(this).hasClass('keyboard-delete')){
                 initKeyboardNum = initKeyboardNum.substring(0, initKeyboardNum.length-1);
-                console.log(initKeyboardNum)
                 reputVal(initKeyboardNum)
                 if(!initKeyboardNum.includes('.')){
                     $("#am-number-keyboard-container .keyboard-dot").removeClass('am-number-keyboard-item-disabled')
                 }
+                if(!initKeyboardNum){
+                    $(".keyboard-confirm").addClass('am-number-keyboard-item-disabled')
+                    $(".keyboard-hide").addClass('am-number-keyboard-item-disabled')
+                }
             }
             else if($(this).hasClass('keyboard-hide')){
-                console.log("收起键盘")
+                if($(this).hasClass('am-number-keyboard-item-disabled')){
+                    return
+                }
                 clearAllClass();
                 hideKeyboardHandle();
             }
             else {
+                $(".keyboard-confirm").removeClass('am-number-keyboard-item-disabled')
+                $(".keyboard-hide").removeClass('am-number-keyboard-item-disabled')
                 if($(this).hasClass('am-number-keyboard-item-disabled')){
                     return
                 }
-
                 if(initKeyboardNum){
                     if($(this).text() === '.'){
                         $("#am-number-keyboard-container .keyboard-dot").addClass('am-number-keyboard-item-disabled');
@@ -275,22 +417,22 @@
                         reputVal(initKeyboardNum)
                     }else {
                         initKeyboardNum += $(this).text();
+
                         var rightDot = initKeyboardNum.split(".");
-
-                        console.error("initKeyboardNum", rightDot[0])
-                        console.error("initKeyboardNum", rightDot[1])
-                        if(rightDot[1] && Number(rightDot[1]) <= 99){
-                            var preNum = rightDot[0];
-                            var dotNum = rightDot[1].substring(0, 2);
-                            console.log(preNum)
-                            console.log(dotNum)
-                            initKeyboardNum = preNum + '.' + dotNum;
-                            reputVal(initKeyboardNum)
+                        console.log(rightDot[1])
+                        if(rightDot[1]){
+                            var newNum = initKeyboardNum.split('.');
+                            initKeyboardNum = newNum[0] + '.' + newNum[1].substring(0, 2);
+                            if(Number(rightDot[1]) <= 99){
+                                var preNum = rightDot[0];
+                                var dotNum = rightDot[1].substring(0, 2);
+                                initKeyboardNum = preNum + '.' + dotNum;
+                                reputVal(initKeyboardNum)
+                            }
                         }else {
-
+                            initKeyboardNum = initKeyboardNum.substring(0, 8);
                             reputVal(initKeyboardNum)
                         }
-
                     }
                 }else {//第一个不能是0 或者 .
                     if($(this).text() !== '.' && $(this).text() !== '0'){
@@ -298,27 +440,7 @@
                         reputVal(initKeyboardNum)
                     }
                 }
-
-                // if(initKeyboardNum.includes('.')){
-                //     if($(this).text() !== '.'){
-                //         var rightDot = initKeyboardNum.split(".")
-                //         console.warn("1",rightDot[0])
-                //         if(Number(initKeyboardNum) <= 99999999.99 && rightDot[1].length === 0 || rightDot[1].length < 2 ){
-                //             initKeyboardNum += $(this).text()
-                //             reputVal(initKeyboardNum)
-                //         }
-                //     }
-                // }else {
-                //     if(Number(initKeyboardNum) <= 10000000){//超过8位限制
-                //         console.warn(Number(initKeyboardNum))
-                //         initKeyboardNum += $(this).text()
-                //         reputVal(initKeyboardNum)
-                //     }
-                // }
-
             }
-
-
         })
     })
 
