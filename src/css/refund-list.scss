@@ -32,11 +32,16 @@
                     justify-content: space-between;
                     height:100%;
                     flex-basis: 60%;
-                    .title{
-                        line-height:28px;
+                    overflow: hidden;
+                    > .title{
+                        width:100%;
+                        line-height:1;
                         font-size:30px;
                         font-weight:500;
                         color:rgba(0,0,0,1);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
                     }
                     .refund-user-msg{
                         display: flex;
@@ -49,13 +54,13 @@
                             justify-content: space-between;
                             align-items: center;
                             .title{
-                                line-height:23px;
+                                line-height:1.1;
                                 font-size:24px;
                                 font-weight:500;
                                 color:rgba(153,153,153,1);
                             }
                             .refund-details{
-                                line-height:23px;
+                                line-height:1.1;
                                 font-size:24px;
                                 font-weight:500;
                                 color:rgba(102,102,102,1);

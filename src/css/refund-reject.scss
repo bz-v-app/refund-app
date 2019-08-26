@@ -32,6 +32,9 @@ body{
                 font-size:30px;
                 font-weight:500;
                 color:rgba(0,0,0,1);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
         .refund-reject-msg{
@@ -50,6 +53,7 @@ body{
                 // flex-basis:60%;
                 height:100%;
                 margin-right:100px;
+                overflow: hidden;
                 .reject-msg-listOne{
                     display: flex;
                     flex-flow: row nowrap;
@@ -63,12 +67,15 @@ body{
                         line-height: 1;
                     }
                     .title{
-                        width:4em;
+                        min-width:4em;
                         color:rgba(153,153,153,1);
                         margin-right:28px;
                     }
                     .reject-info{
                         color:rgba(102,102,102,1);
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
                     }
                 }
             }
@@ -99,6 +106,9 @@ body{
                     font-size:30px;
                     font-weight:500;
                     color:rgba(0,0,0,1);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
             }
             .refund-app-box{
@@ -156,7 +166,7 @@ body{
                 .title{
                     flex-basis: 24%;
                     height:100%;
-                    line-height: 1;
+                    line-height: 1.2;
                     font-size:26px;
                     font-weight:500;
                     color:rgba(102,102,102,1);
@@ -164,7 +174,7 @@ body{
                 .refund-reson-inp{
                     flex-basis: 76%;
                     height:100%;
-                    line-height: 1;
+                    line-height: 1.2;
                     font-size:26px;
                     font-weight:500;
                     color:rgba(0,0,0,1);
@@ -229,7 +239,7 @@ body{
                         @extend %flexStyle;
                         .refund-details-name{
                             width:405px;
-                            line-height:1;
+                            line-height:1.2;
                             font-size:24px;
                             font-weight:500;
                             color:rgba(102,102,102,1);

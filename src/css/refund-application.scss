@@ -61,7 +61,6 @@ body{
             .refund-main-title{
                 @extend %flexStyle;
                 width:100%;
-                height:80px;
                 box-sizing: border-box;
                 padding:26px 30px 29px;
                 background:rgba(255,255,255,1);
@@ -70,14 +69,14 @@ body{
                 margin-bottom:20px;
                 .title{
                     flex-basis: 22%;
-                    line-height:25px;
+                    line-height:1.3;
                     font-size:26px;
                     font-weight:500;
                     color:rgba(102,102,102,1);
                 }
                 .refund-title-inp{
                     flex-basis: 78%;
-                    line-height:28px;
+                    line-height:1;
                     font-size:30px;
                     font-weight:500;
                     color:rgba(0,0,0,1);
@@ -128,7 +127,7 @@ body{
                     width:100%;
                     .title{
                         width:100%;
-                        line-height:25px;
+                        line-height:1.1;
                         font-size:26px;
                         font-weight:500;
                         color:rgba(102,102,102,1);
@@ -171,7 +170,7 @@ body{
                         @extend %flexStyle;
                         .refund-details-name{
                             width:405px;
-                            line-height:1;
+                            line-height:1.1;
                             font-size:24px;
                             font-weight:500;
                             color:rgba(102,102,102,1);
