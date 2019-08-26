@@ -9,83 +9,141 @@ body{
     justify-content: flex-start;
     align-items: center;
 }
-.refund-app-wrap{
+.refund-reject-wrap{
     width:100%;
     height:100%;
     box-sizing: border-box;
     padding:20px 30px 165px 30px;
     overflow-y:scroll;
-    .refund-app-header{
+    .refund-reject-header{
         width:100%;
-        .refund-app-info{
+        background:rgba(255,255,255,1);
+        box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        border-radius:16px;
+        margin-bottom:20px;
+        .refund-reject-title{
             width:100%;
             box-sizing: border-box;
-            padding:29px 31px 35px;
-            background:rgba(255,255,255,1);
-            box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            border-radius:16px;
-            margin-bottom: 20px;
-            .refund-info-one{
-                @extend %flexStyle;
+            padding:28px 31px 24px;
+            border-bottom: 1px solid rgba(235,235,235,1);
+            .title{
                 width:100%;
-                .title{
-                    flex-basis: 22%;
-                    line-height:25px;
-                    font-size:26px;
-                    font-weight:500;
-                    color:rgba(102,102,102,1);
+                line-height: 1;
+                font-size:30px;
+                font-weight:500;
+                color:rgba(0,0,0,1);
+            }
+        }
+        .refund-reject-msg{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            width:100%;
+            height:189px;
+            box-sizing: border-box;
+            padding:31px 30px 33px;
+            .reject-msg-left{
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                // flex-basis:60%;
+                height:100%;
+                margin-right:100px;
+                .reject-msg-listOne{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width:100%;
+                    .title,
+                    .reject-info{
+                        font-size:24px;
+                        font-weight: 500;
+                        line-height: 1;
+                    }
+                    .title{
+                        width:4em;
+                        color:rgba(153,153,153,1);
+                        margin-right:28px;
+                    }
+                    .reject-info{
+                        color:rgba(102,102,102,1);
+                    }
                 }
-                .refund-info-details{
-                    flex-basis: 78%;
-                    line-height:1;
-                    font-size:30px;
-                    font-weight:500;
-                    color:rgba(0,0,0,1);
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
             }
-            .refund-store-box{
-                margin-bottom:26px;
-            }
-            .refund-user-box {
-                margin-bottom: 29px;
-            }
+        }
+        .refund-reject-msg::after{
+            content:"";
+            display: block;
+            width:120px;
+            height:58px;
+            background-image: url("../images/refund-collect-icon.png");
+            background-repeat: no-repeat;
+            background-size: 404px 144px;
+            background-position: -140px -60px;
         }
     }
     .refund-app-main{
         width:100%;
-        .refund-app-section{
+        .refund-app-total{
             width:100%;
-            .refund-main-title{
-                @extend %flexStyle;
+            .refund-app-title{
                 width:100%;
-                height:80px;
                 box-sizing: border-box;
-                padding:26px 30px 29px;
-                background:rgba(255,255,255,1);
-                box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-                border-radius:8px;
-                margin-bottom:20px;
-                .title{
-                    flex-basis: 22%;
-                    line-height:25px;
-                    font-size:26px;
-                    font-weight:500;
-                    color:rgba(102,102,102,1);
-                }
-                .refund-title-inp{
-                    flex-basis: 78%;
-                    line-height:28px;
+                padding:28px 31px 24px;
+                border-bottom: 1px solid rgba(235,235,235,1);
+                h2.title{
+                    width:100%;
+                    line-height: 1;
                     font-size:30px;
                     font-weight:500;
                     color:rgba(0,0,0,1);
                 }
-                .refund-title-inp::-webkit-input-placeholder {
-                    color:rgba(204,204,204,1);
+            }
+            .refund-app-box{
+                width:100%;
+                margin-bottom: 20px;
+                background:rgba(255,255,255,1);
+                box-shadow:0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+                border-radius:16px;
+                .refund-app-info{
+                    width:100%;     
+                    box-sizing: border-box;
+                    padding:28px 31px 35px;
+                    .refund-info-one{
+                        @extend %flexStyle;
+                        width:100%;
+                        .title{
+                            flex-basis: 22%;
+                            line-height:25px;
+                            font-size:26px;
+                            font-weight:500;
+                            color:rgba(102,102,102,1);
+                        }
+                        .refund-info-details{
+                            flex-basis: 78%;
+                            line-height:1;
+                            font-size:30px;
+                            font-weight:500;
+                            color:rgba(0,0,0,1);
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                    .refund-store-box{
+                        margin-bottom:26px;
+                    }
+                    .refund-user-box {
+                        margin-bottom: 29px;
+                    }
                 }
             }
+            
+        }
+        .refund-app-section{
+            width:100%;
             .refund-main-reason{
                 @extend %flexStyle;
                 align-items: flex-start;
@@ -182,9 +240,9 @@ body{
                         .refund-details-money{
                             width:162px;
                             line-height:1;
-                            font-size:30px;
+                            font-size:26px;
                             font-weight:500;
-                            color:rgba(0,0,0,1);
+                            color:rgba(102,102,102,1);
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;

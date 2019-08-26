@@ -7,36 +7,63 @@
     <meta name="x5-fullscreen" content="true">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
     <title>报事报修</title>
-    <link rel="stylesheet" href="../css/refund-application.css">
+    <link rel="stylesheet" href="../css/refund-reject.css"/>
     <script>
         !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
         flex(100, 1);
     </script>
 </head>
 <body>
-    <div class="refund-app-wrap">
-        <header class="refund-app-header">
-            <div class="refund-app-info">
-                <div class="refund-store-box refund-info-one">
-                    <h3 class="title">申请店铺</h3>
-                    <p class="refund-info-details">NIKE</p>
-                </div>
-                <div class="refund-user-box refund-info-one">
-                    <h3 class="title">申请人</h3>
-                    <p class="refund-info-details">王武</p>
-                </div>
-                <div class="refund-time-box refund-info-one">
-                    <h3 class="title">申请时间</h3>
-                    <p class="refund-info-details">2019-05-03 10：56</p>
-                </div>
+    <div class="refund-reject-wrap">
+        <header class="refund-reject-header">
+            <div class="refund-reject-title">
+                <h2 class="title">
+                    审批驳回，请修改完成后重新申请
+                </h2>
+            </div>
+            <div class="refund-reject-msg">
+                <ul class="reject-msg-left">
+                    <li class="reject-msg-listOne">
+                        <h3 class="title">审核人</h3>
+                        <p class="reject-info">王武</p>
+                    </li>
+                    <li class="reject-msg-listOne">
+                        <h3 class="title">审核时间</h3>
+                        <p class="reject-info">2019-05-03  10：56</p>
+                    </li>
+                    <li class="reject-msg-listOne">
+                        <h3 class="title">审核说明</h3>
+                        <p class="reject-info">附件上传错误，驳回</p>
+                    </li>
+                </ul>
+                <!-- <div class="reject-msg-right">
+                    
+                </div> -->
             </div>
         </header>
         <main class="refund-app-main">
-            <div class="refund-app-section">
-                <div class="refund-main-title">
-                    <h3 class="title">主题</h3>
-                    <input type="text" class="refund-title-inp" placeholder="填写申请标题"/>
+            <div class="refund-app-total">
+                <div class="refund-app-box">
+                    <div class="refund-app-title">
+                        <h2 class="title">关于保证金的申请</h2>
+                    </div>
+                    <div class="refund-app-info">
+                        <div class="refund-store-box refund-info-one">
+                            <h3 class="title">申请店铺</h3>
+                            <p class="refund-info-details">NIKE</p>
+                        </div>
+                        <div class="refund-user-box refund-info-one">
+                            <h3 class="title">申请人</h3>
+                            <p class="refund-info-details">王武</p>
+                        </div>
+                        <div class="refund-time-box refund-info-one">
+                            <h3 class="title">申请时间</h3>
+                            <p class="refund-info-details">2019-05-03 10：56</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="refund-app-section">
                 <div class="refund-main-reason">
                     <h3 class="title">申请原因</h3>
                     <textarea class="refund-reson-inp" placeholder="自主填写"></textarea>
@@ -56,7 +83,7 @@
                                 物业管理费(2019.06.01-2019.06.30)
                             </p>
                             <p class="refund-details-money">
-                                99999.00元
+                                99.00元
                             </p>
                             <button class="refund-details-del"></button>
                         </li>
@@ -65,7 +92,7 @@
                                 物业管理费(2019.06.01-2019.06.30)
                             </p>
                             <p class="refund-details-money">
-                                99999.00元
+                                99.00元
                             </p>
                             <button class="refund-details-del"></button>
                         </li>
@@ -74,7 +101,7 @@
                                 物业管理费(2019.06.01-2019.06.30)
                             </p>
                             <p class="refund-details-money">
-                                99999.00元
+                                99.00元
                             </p>
                             <button class="refund-details-del"></button>
                         </li>
@@ -83,7 +110,7 @@
                                 物业管理费(2019.06.01-2019.06.30)
                             </p>
                             <p class="refund-details-money">
-                                99999.00元
+                                99.00元
                             </p>
                             <button class="refund-details-del"></button>
                         </li>
@@ -92,7 +119,7 @@
                                 物业管理费(2019.06.01-2019.06.30)
                             </p>
                             <p class="refund-details-money">
-                                99999.00元
+                                99.00元
                             </p>
                             <button class="refund-details-del"></button>
                         </li>
@@ -135,11 +162,14 @@
     </div>
     <div class="refund-foot-box">
         <a class="refund-foot-nav" href="javascript:void(0);">
-            <button class="refund-foot-btn">提交</button>
+            <button class="refund-foot-btn">重新提交申请</button>
         </a>
     </div>
     <script src="../js/lib/jquery-1.8.3.min.js"></script>
     <script src="../js/lib/fastclick.js"></script>
     <script src="../js/lib/layer.js"></script>
+    <script>
+        layer.alert("ddd");
+    </script>
 </body>
 </html>
