@@ -43,12 +43,12 @@ gulp.task('html',function(){
 gulp.task('images', function() {
     return gulp.src('./src/images/**/*.*')
         .pipe(plumber())
-        .pipe(imagemin({
-            progressive: true, //Boolean类型 默认:false 无损压缩图片
-            optimizationLevel: 5, //number类型 默认:3 取值范围:0-7(优化等级)
-            interlced: true, //Boolean类型 默认false 隔行扫描gif进行渲染
-            multipass: true //Boolean类型 默认false 多次优化svg直到完全优化
-        }))
+        // .pipe(imagemin({
+        //     progressive: true, //Boolean类型 默认:false 无损压缩图片
+        //     optimizationLevel: 5, //number类型 默认:3 取值范围:0-7(优化等级)
+        //     interlced: true, //Boolean类型 默认false 隔行扫描gif进行渲染
+        //     multipass: true //Boolean类型 默认false 多次优化svg直到完全优化
+        // }))
         .pipe(gulp.dest('./dist/images'))
         // .pipe(notify({ message: 'img task ok' }));
 });

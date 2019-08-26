@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 30px;
-  background-color: #F0F2F5;
+  background-color: rgba(250,250,250,1);
 }
 
 body,
@@ -67,6 +67,9 @@ li {
 
 a {
   text-decoration: none;
+}
+a:-webkit-any-link{
+  color:normal;
 }
 
 img {
