@@ -50,7 +50,7 @@ body{
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-between;
-                // flex-basis:60%;
+                max-width:60%;
                 height:100%;
                 margin-right:100px;
                 overflow: hidden;
@@ -72,6 +72,7 @@ body{
                         margin-right:28px;
                     }
                     .reject-info{
+                        flex:1;
                         color:rgba(102,102,102,1);
                         text-overflow: ellipsis;
                         overflow: hidden;
@@ -132,7 +133,7 @@ body{
                             color:rgba(102,102,102,1);
                         }
                         .refund-info-details{
-                            flex-basis: 78%;
+                            flex:1;
                             line-height:1;
                             font-size:30px;
                             font-weight:500;
@@ -239,7 +240,7 @@ body{
                     .refund-details-one{
                         @extend %flexStyle;
                         .refund-details-name{
-                            width:405px;
+                            flex:1;
                             line-height:1.2;
                             font-size:24px;
                             font-weight:500;
@@ -257,7 +258,7 @@ body{
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;
-                            margin-left:21px;
+                            text-align: center;
                         }
                         .refund-details-del{
                             width:30px;
