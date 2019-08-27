@@ -38,27 +38,25 @@ body{
             }
         }
         .refund-reject-msg{
+            position: relative;
             display: flex;
             flex-flow: row nowrap;
             justify-content: flex-start;
             align-items: center;
             width:100%;
-            height:189px;
             box-sizing: border-box;
             padding:31px 30px 33px;
             .reject-msg-left{
                 display: flex;
                 flex-flow: column nowrap;
                 justify-content: space-between;
-                max-width:60%;
-                height:100%;
-                margin-right:100px;
+                width:100%;
                 overflow: hidden;
                 .reject-msg-listOne{
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: flex-start;
-                    align-items: center;
+                    align-items: flex-start;
                     width:100%;
                     .title,
                     .reject-info{
@@ -79,13 +77,29 @@ body{
                         white-space: nowrap;
                     }
                 }
+                .reject-msg-listOne:nth-child(2){
+                    margin-top:29px;
+                }
+                .reject-msg-listOne:nth-child(3){
+                    margin-top:27px;
+                    .reject-info{
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                        white-space:normal;
+                    }
+                }
             }
         }
         .refund-reject-msg::after{
+            position: absolute;
             content:"";
             display: block;
             width:120px;
             height:58px;
+            top:40px;
+            right:96px;
             background-image: url("../images/refund-collect-icon.png");
             background-repeat: no-repeat;
             background-size: 404px 144px;
