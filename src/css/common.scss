@@ -1,4 +1,8 @@
 /* reset */
+html,body{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html {
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;

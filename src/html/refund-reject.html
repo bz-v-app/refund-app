@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
     <title>报事报修</title>
     <link rel="stylesheet" href="../css/refund-reject.css"/>
+    <link rel="stylesheet" href="../css/refund-checkBox.css"/>
     <script>
         !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
         flex(100, 1);
@@ -71,13 +72,13 @@
                 <div class="refund-main-details">
                     <div class="refund-details-title">
                         <h3 class="title">申请退费明细</h3>
-                        <div class="refund-details-add">
-                            <a href="javascript:void(0);" class="details-add-nav">
+                        <div class="refund-details-add" id="addFeeHandle">
+                            <div class="details-add-nav">
                                 <h3 class="title">添加</h3>
-                            </a>
+                            </div>
                         </div>
                     </div>
-                    <ul class="refund-details-list">
+                    <ul class="refund-details-list" id="applyFee">
                         <li class="refund-details-one">
                             <p class="refund-details-name">
                                 物业管理费(2019.06.01-2019.06.30)
@@ -165,8 +166,376 @@
             <button class="refund-foot-btn">重新提交申请</button>
         </a>
     </div>
+
     <script src="../js/lib/jquery-1.8.3.min.js"></script>
     <script src="../js/lib/fastclick.js"></script>
     <script src="../js/lib/layer.js"></script>
+    <script>
+
+        $(function () {
+
+            var htmlStr = '<div class="refund-checkBox" >\n' +
+                '            <div class="refund-checkBox-inner">\n' +
+                '                <div class="refund-checkBox-main">\n' +
+                '                    <div class="main-top-tips">\n' +
+                '                        <h3 class="title">退费列表</h3>\n' +
+                '                        <div class="right-info">\n' +
+                '                            <sub>退款总额:</sub>\n' +
+                '                            <span class="mes">12284.00元</span>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                    <div class="main-li-warp">\n' +
+                '                        <form action="" id="userform">\n' +
+                '                            <ul>\n' +
+                '                                <li>\n' +
+                '                                    <input type="checkbox" class="magic-checkbox" name="feeType"  id="ch1" value="1">\n' +
+                '                                    <label for="ch1" class="label-flex-warp">\n' +
+                '                                        <div class="label-flex-item">\n' +
+                '                                            <div class="item-main">\n' +
+                '                                                <input type="hidden" name="title1" value="保证金名称1">\n' +
+                '                                                <h3 class="title">保证金名称1</h3>\n' +
+                '                                                <p class="date">(2019-05-01至2019-06.30)</p>\n' +
+                '                                                <div class="amount">\n' +
+                '                                                    <input type="hidden" name="amount1" class="amount-ipt" value="21356.00">\n' +
+                '                                                    <div class="amount-text">\n' +
+                '                                                        <div class="fake-input">2136.00</div>\n' +
+                '                                                    </div>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                            <div class="right-handle" data-id="1">\n' +
+                '                                                <div class="inner-text">\n' +
+                '                                                    <i class="edit-icon"></i>\n' +
+                '                                                    <p class="tips-text">修改金额</p>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </label>\n' +
+                '                                </li>\n' +
+                '                                <li>\n' +
+                '                                    <input type="checkbox" class="magic-checkbox" name="feeType" id="ch2" value="2">\n' +
+                '                                    <label for="ch2" class="label-flex-warp">\n' +
+                '                                        <div class="label-flex-item">\n' +
+                '                                            <div class="item-main">\n' +
+                '                                                <input type="hidden" name="title2" value="保证金名称2">\n' +
+                '                                                <h3 class="title">保证金名称2</h3>\n' +
+                '                                                <p class="date">(2019-05-01至2019-06.30)</p>\n' +
+                '                                                <div class="amount">\n' +
+                '                                                    <input type="hidden" name="amount2" class="amount-ipt" value="21356.00">\n' +
+                '                                                    <div class="amount-text">\n' +
+                '                                                        <div class="fake-input">2556.00</div>\n' +
+                '                                                    </div>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                            <div class="right-handle" data-id="2">\n' +
+                '                                                <div class="inner-text">\n' +
+                '                                                    <i class="edit-icon"></i>\n' +
+                '                                                    <p class="tips-text">修改金额</p>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </label>\n' +
+                '                                </li>\n' +
+                '                                <li>\n' +
+                '                                    <input type="checkbox" class="magic-checkbox" name="feeType" id="ch3" value="3">\n' +
+                '                                    <label for="ch3" class="label-flex-warp">\n' +
+                '                                        <div class="label-flex-item">\n' +
+                '                                            <div class="item-main">\n' +
+                '                                                <input type="hidden" name="title3" value="保证金名称3">\n' +
+                '                                                <h3 class="title">保证金名称3</h3>\n' +
+                '                                                <p class="date">(2019-05-01至2019-06.30)</p>\n' +
+                '                                                <div class="amount">\n' +
+                '                                                    <input type="hidden" name="amount3" class="amount-ipt" value="21356.00">\n' +
+                '                                                    <div class="amount-text">\n' +
+                '                                                        <div class="fake-input">2136.00</div>\n' +
+                '                                                    </div>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                            <div class="right-handle">\n' +
+                '                                                <div class="inner-text">\n' +
+                '                                                    <i class="edit-icon"></i>\n' +
+                '                                                    <p class="tips-text">修改金额</p>\n' +
+                '                                                </div>\n' +
+                '                                            </div>\n' +
+                '                                        </div>\n' +
+                '                                    </label>\n' +
+                '                                </li>\n' +
+                '                            </ul>\n' +
+                '                        </form>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '                <div class="submit-btn">\n' +
+                '                    <button class="sure" id="submit">确定</button>\n' +
+                '                </div>\n' +
+                '            </div>\n' +
+                '            <div id="am-number-keyboard-container" class="am-number-keyboard-container">\n' +
+                '                <div class="am-number-keyboard-inner">\n' +
+                '                    <div class="am-keyboard-mask"></div>\n' +
+                '                    <div class="am-number-keyboard-wrapper am-number-keyboard-wrapper-hide">\n' +
+                '                        <table>\n' +
+                '                            <tbody>\n' +
+                '                            <tr>\n' +
+                '                                <td class="am-number-keyboard-item">1</td>\n' +
+                '                                <td class="am-number-keyboard-item">2</td>\n' +
+                '                                <td class="am-number-keyboard-item">3</td>\n' +
+                '                                <td class="am-number-keyboard-item keyboard-delete am-number-keyboard-item-disabled" rowspan="2" aria-label="退格"></td>\n' +
+                '                            </tr>\n' +
+                '                            <tr>\n' +
+                '                                <td class="am-number-keyboard-item">4</td>\n' +
+                '                                <td class="am-number-keyboard-item">5</td>\n' +
+                '                                <td class="am-number-keyboard-item">6</td>\n' +
+                '                            </tr>\n' +
+                '                            <tr>\n' +
+                '                                <td class="am-number-keyboard-item">7</td>\n' +
+                '                                <td class="am-number-keyboard-item">8</td>\n' +
+                '                                <td class="am-number-keyboard-item">9</td>\n' +
+                '                                <td class="am-number-keyboard-item keyboard-confirm" rowspan="2">确定</td>\n' +
+                '                            </tr>\n' +
+                '                            <tr>\n' +
+                '                                <td class="am-number-keyboard-item keyboard-dot">.</td>\n' +
+                '                                <td class="am-number-keyboard-item">0</td>\n' +
+                '                                <td class="am-number-keyboard-item keyboard-hide" aria-label="收起键盘"></td>\n' +
+                '                            </tr>\n' +
+                '                            </tbody>\n' +
+                '                        </table>\n' +
+                '                    </div>\n' +
+                '                </div>\n' +
+                '\n' +
+                '            </div>\n' +
+                '        </div>'
+
+            //添加申请退费明细
+            $("#addFeeHandle").on("click", function () {
+                console.log(1)
+                layer.open({
+                    type: 1
+                    ,className: 'layer-modal-cont'
+                    ,content: htmlStr
+                    ,anim: 'up'
+                    ,style: 'position:fixed; left:0; top:0; width:100%; height:100%; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;'
+                    ,success: function(elem){
+                        var initKeyboardNum = ''; //金额键盘初始值
+
+                        $("#submit").on("click", function () {
+                            var d = [];
+                            $("#userform li").each(function (i, ele) {
+                                var isChecked = $(ele).find(".magic-checkbox");
+                                var type = isChecked.val();
+                                var title = $(ele).find(".title").text();
+                                var date = $(ele).find(".date").text();
+                                var amount = $(ele).find(".amount-ipt").val();
+                                if(isChecked.attr("checked")){
+                                    d.push({type, title, amount, date})
+                                }
+                            });
+
+                            if(d.length !== 0){
+                                console.warn("取得的数据：",d)
+                                var feeHtml = ''
+                                d.forEach(function (ele) {
+                                    console.log(ele)
+                                    feeHtml += '<li class="refund-details-one"><p class="refund-details-name">'+ ele.title + ele.date +'</p><p class="refund-details-money">'+ ele.amount +'</p><button class="refund-details-del"></button></li>'
+                                })
+                                //
+                                $("#applyFee").html(feeHtml)
+
+                                layer.closeAll()
+                            }
+
+                        });
+
+
+                        /**
+                         * 点击修改操作
+                         * */
+                        $(".main-li-warp").on("click", ".right-handle", function (e) {
+                            e.preventDefault();
+                            if($(this).siblings().hasClass("active")){
+                                $(this).siblings().removeClass("active");
+                                $(this).siblings().find(".fake-input").removeClass('focus');
+                                hideKeyboardHandle()
+                            }else {
+                                setTimeout(function(){
+                                    e.target.scrollIntoView(true);
+                                },100);
+                                $('.main-li-warp').animate({paddingBottom: '120%'}, 200);
+                                $('.refund-checkBox-main').css({overflow: 'hidden'});
+
+                                $(this).siblings().addClass("active").parents('li').siblings().find('.item-main').removeClass("active");
+                                $(this).siblings().find(".fake-input").addClass("focus").parents('li').siblings().find('.fake-input').removeClass("focus");
+
+                                //赋值
+                                initKeyboardNum = $(this).siblings().find(".amount-ipt").val();
+                                openKeyboardHandle();
+                                if(initKeyboardNum.includes(".")){
+                                    $("#am-number-keyboard-container .keyboard-dot").addClass('am-number-keyboard-item-disabled')
+                                }
+                            }
+                        })
+
+                        var clearAllClass = function () {
+                            $(".main-li-warp li").each(function (i, ele) {
+                                $(ele).find(".item-main").removeClass('active')
+                                $(ele).find(".fake-input").removeClass('focus')
+                            })
+                        }
+
+                        //关闭键盘
+                        var hideKeyboardHandle = function () {
+                            $("#am-number-keyboard-container").hide();
+                            $('.main-li-warp').animate({paddingBottom: 0}, 200);
+                            $('.refund-checkBox-main').css({overflowY: 'auto'});
+                            // $('.refund-checkBox-main').animate({scrollTop: 0}, 200);
+                            var targetEle = $("#am-number-keyboard-container .am-number-keyboard-wrapper");
+                            discoverIsMoney()
+                            if(!targetEle.hasClass('am-number-keyboard-wrapper-hide')){
+                                targetEle.addClass('am-number-keyboard-wrapper-hide')
+                            }
+                        }
+
+                        //打开键盘
+                        var openKeyboardHandle = function () {
+                            $("#am-number-keyboard-container").show();
+                            var targetEle = $("#am-number-keyboard-container .am-number-keyboard-wrapper");
+                            if(targetEle.hasClass('am-number-keyboard-wrapper-hide')){
+                                targetEle.removeClass('am-number-keyboard-wrapper-hide')
+                            }
+                        }
+                        //赋值
+                        var reputVal = function (num) {
+                            $(".main-li-warp li").each(function (i, ele) {
+                                var targetEle = $(ele).find('.fake-input');
+                                var targetValEle = $(ele).find('.amount-ipt');
+                                var isFocus = targetEle.hasClass('focus');
+                                if(isFocus){
+                                    targetEle.text(num)
+                                    targetValEle.val(num)
+                                }
+                            })
+                        }
+
+                        //自动补全
+                        var autoAdd = function (num) {
+                            var isDot = num.includes(".")
+                            if(isDot){
+                                var newNum = num.split('.');
+                                if(newNum[1] && newNum[1].length === 2){
+                                    return num
+                                }else if(newNum[1] && newNum[1].length === 1){
+                                    return num + '0'
+                                }else {
+                                    return num + '00'
+                                }
+                            }else {
+                                return num + '.00'
+                            }
+                        }
+
+
+                        var discoverIsMoney = function () {
+                            $(".main-li-warp li").each(function (i, ele) {
+                                $(ele).find('.fake-input').text(function () {
+                                    return autoAdd($(this).text())
+                                });
+                                $(ele).find('.amount-ipt').val(function () {
+                                    return autoAdd($(this).val())
+                                });
+                            })
+                        }
+
+
+                        //键盘操作
+                        $("#am-number-keyboard-container").on("click", ".am-number-keyboard-item", function () {
+
+                            if($(this).hasClass('keyboard-confirm')){
+                                if($(this).hasClass('am-number-keyboard-item-disabled')){
+                                    return
+                                }
+                                clearAllClass();
+                                hideKeyboardHandle();
+                            }
+                            else if($(this).hasClass('keyboard-delete')){
+                                initKeyboardNum = initKeyboardNum.substring(0, initKeyboardNum.length-1);
+                                reputVal(initKeyboardNum)
+                                if(!initKeyboardNum.includes('.')){
+                                    $("#am-number-keyboard-container .keyboard-dot").removeClass('am-number-keyboard-item-disabled')
+                                }
+                                if(!initKeyboardNum){
+                                    $(".keyboard-confirm").addClass('am-number-keyboard-item-disabled')
+                                    $(".keyboard-hide").addClass('am-number-keyboard-item-disabled')
+                                }
+                            }
+                            else if($(this).hasClass('keyboard-hide')){
+                                if($(this).hasClass('am-number-keyboard-item-disabled')){
+                                    return
+                                }
+                                clearAllClass();
+                                hideKeyboardHandle();
+                            }
+                            else {
+                                $(".keyboard-confirm").removeClass('am-number-keyboard-item-disabled');
+                                $(".keyboard-hide").removeClass('am-number-keyboard-item-disabled');
+                                if($(this).hasClass('am-number-keyboard-item-disabled')){
+                                    return
+                                }
+                                if(initKeyboardNum){
+                                    if($(this).text() === '.'){
+                                        $("#am-number-keyboard-container .keyboard-dot").addClass('am-number-keyboard-item-disabled');
+                                        initKeyboardNum += $(this).text();
+                                        reputVal(initKeyboardNum)
+                                    }else {
+                                        initKeyboardNum += $(this).text();
+                                        var rightDot = initKeyboardNum.split(".");
+                                        if(rightDot[1]){
+                                            var newNum = initKeyboardNum.split('.');
+                                            initKeyboardNum = newNum[0] + '.' + newNum[1].substring(0, 2);
+                                            if(Number(rightDot[1]) <= 99){
+                                                var preNum = rightDot[0];
+                                                var dotNum = rightDot[1].substring(0, 2);
+                                                initKeyboardNum = preNum + '.' + dotNum;
+                                                reputVal(initKeyboardNum)
+                                            }
+                                        }else {
+                                            initKeyboardNum = initKeyboardNum.substring(0, 8);
+                                            reputVal(initKeyboardNum)
+                                        }
+                                    }
+                                }else {//第一个不能是0 或者 .
+                                    if($(this).text() !== '.' && $(this).text() !== '0'){
+                                        initKeyboardNum += $(this).text();
+                                        reputVal(initKeyboardNum)
+                                    }
+                                }
+                            }
+                        })
+
+                    }
+                });
+            })
+
+            
+            //退费明细删除
+            
+            $("#applyFee").on("click", ".refund-details-del", function () {
+                var _self = $(this)
+                layer.open({
+                    content: '您确定要删除该条明细吗？'
+                    ,className: 'comfireRemove'
+                    ,btn: ['确定', '取消']
+                    ,yes: function(index){
+                        console.log(1)
+                        _self.parent().remove();
+                        layer.close(index);
+                    }
+                });
+
+            })
+
+
+
+
+
+        })
+
+    </script>
 </body>
 </html>
